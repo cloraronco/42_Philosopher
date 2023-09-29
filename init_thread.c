@@ -85,6 +85,11 @@ void	death_checker(t_data *data, t_philo *philo)
 				print_action(data, i, "died");
 				data->died = 1;
 			}
+			if (data->nb_philo == 1)
+			{
+				print_action(data, 1, "died");
+				data->died = 1;
+			}
 			pthread_mutex_unlock(&(data->meal_check));
 			usleep(100);
 		}
